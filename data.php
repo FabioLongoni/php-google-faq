@@ -23,5 +23,10 @@ $faqs = [
                  
   ],
 ];
-var_dump($faqs);
+foreach ($faqs as $key => $value) {
+  echo $value['question'] . $value['answer'];
+}
+
+
+
 ?>
