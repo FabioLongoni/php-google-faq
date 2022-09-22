@@ -26,14 +26,28 @@
   <main>
     <div class="container">
       <ul>
-        <li>
-          <h3>
-            Come state implementando la recente decisione della Corte di giustizia dell'Unione europea (CGUE) relativa al diritto all'oblio?
-          </h3>
-          <p>
-            La recente decisione della Corte di giustizia dell'Unione europea ha profonde conseguenze per i motori di ricerca in Europa. La Corte ha stabilito che alcuni utenti hanno il diritto di chiedere ai motori di ricerca come Google di rimuovere risultati relativi a chiavi di ricerca che includono il proprio nome. Per poter essere rimossi, i risultati visualizzati devono essere inadeguati, irrilevanti o non più rilevanti, o eccessivi.
-          </p>
-        </li>
+        <?php
+          foreach($faqs as $key => $value) {
+            ?>
+              <li class="question__element">
+                <h3>
+                  <?= $value['question'] ?>
+                </h3>
+                
+                <?php foreach($value['answer'] as $answer) {
+                  ?>
+                  <p class="p__answer">
+                    <?= 
+                      $answer
+                    ?>
+                  </p>
+                  <?php
+                } ?>
+                
+              </li>
+            <?php  
+          }
+        ?>  
       </ul>
     </div>
   </main>
